@@ -17,7 +17,7 @@ Future<Uint8List> httpGet(String url, {Map<String, String> headers}) async {
   final HttpClientResponse response = await request.close();
 
   if (response.statusCode != HttpStatus.ok) {
-    throw HttpException("Could not get network asset ${response.statusCode}", uri: uri);
+    throw HttpException("Could not get network asset, statusCode: ${response.statusCode}", uri: uri);
   }
   return consolidateHttpClientResponseBytes(response);
 }
